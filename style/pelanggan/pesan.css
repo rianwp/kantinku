@@ -1,0 +1,28 @@
+.pilih-menu{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    font-size: 12px;
+    font-weight: 600;
+}
+.foto-menu{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+.menu{
+    width: 100px;
+}
+.thead-font{
+    font-weight: 600;
+}
+.clickable-menu{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    position: relative;
+}
