@@ -1,0 +1,24 @@
+a{
+    text-decoration: none;
+    color: inherit !important;
+}
+.navbar{
+    background-color: white;
+}
+.btn-outline-success:hover{
+    color: white !important;
+}
+.foto-profile{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+.font-nama{
+    font-size: 14px;
+    font-weight: 600;
+}
+.ket-nama{
+    font-size: 12px;
+    font-weight: 400;
+}
