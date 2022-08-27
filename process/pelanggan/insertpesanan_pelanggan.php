@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../connect.php';
+require '../config.php';
 
 $pesanan = json_decode($_POST['pesanan'],true);
 
