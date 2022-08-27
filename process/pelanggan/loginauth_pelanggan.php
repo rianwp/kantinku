@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../connect.php';
+require '../config.php';
 $email = $_POST['email'];
 $password = $_POST['password'];
 
