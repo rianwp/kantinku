@@ -15,7 +15,7 @@
       header('Location: /');
     }
     ?>
-    <div class="container my-5 mx-auto">
+    <div class="container py-5 mx-auto">
       <h1 class="text-center">Pesan Makanan</h1>
       <div class="row mt-4">
         <div class="col-12 col-lg-7 col-md-6">
@@ -27,7 +27,7 @@
             <input type="hidden" id="harga_menu" value="">
             <div class="pilih-menu p-3 card">
               <?php 
-                require 'process/connect.php';
+                require 'process/config.php';
                 $id_pelanggan = $_SESSION['id_pelanggan'];
                 $sqlnama = "SELECT nama_pelanggan FROM pelanggan WHERE id_pelanggan='$id_pelanggan'";
                 $resultnama = mysqli_query($conn, $sqlnama);
@@ -39,7 +39,11 @@
                 <div class="text-center mx-3 menu">
                   <button onclick="changeMenu('<?= $menu['id_menu'] ?>', '<?= $menu['nama_menu'] ?>', '<?= $menu['harga_menu'] ?>', '<?= $menu['id_kios'] ?>')" class="clickable-menu">
                     <label class="form-check-label" for="radio_<?= $menu['id_menu'] ?>">
+                    <?php if($menu['gambar_menu'] == ""){ ?>
+                      <img src="../assets/makanan.jpg" class="foto-menu rounded-circle" alt="Foto <?= $menu['nama_menu'] ?>">
+                    <?php } else{ ?>
                       <img src="data:image/jpeg;base64,<?= base64_encode($menu['gambar_menu']) ?>" class="foto-menu rounded-circle" alt="Foto <?= $menu['nama_menu'] ?>">
+                    <?php } ?>
                     </label>
                   </button>
                   <input onclick="changeMenu('<?= $menu['id_menu'] ?>', '<?= $menu['nama_menu'] ?>', '<?= $menu['harga_menu'] ?>', '<?= $menu['id_kios'] ?>')" class="form-check-input mt-1" type="radio" name="radiomenu" id="radio_<?= $menu['id_menu'] ?>" value="<?= $menu['id_menu'] ?>">
@@ -67,7 +71,7 @@
         <div class="col-12 col-md-6 col-lg-5 mt-md-0 mt-5">
           <label class="form-label">Pesanan</label>
           <div class="overflow-auto card">
-            <table class="table m-0">
+            <table class="table m-0 text-center">
               <thead class="table-dark">
                 <tr>
                   <th class="thead-font" scope="col">Pesanan</th>
