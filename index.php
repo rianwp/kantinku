@@ -22,6 +22,24 @@ switch ($request) {
     case '/riwayat' :
         require 'views/pelanggan/riwayat.php';
         break;
+    case '/dashboardkios' :
+        require 'views/kios/dashboard.php';
+        break;
+    case '/loginkios' :
+        require 'views/kios/login.php';
+        break;
+    case '/pesanankios' :
+        require 'views/kios/pesanan.php';
+        break;
+    case '/profilekios' :
+        require 'views/kios/profile.php';
+        break;
+    case '/signupkios' :
+        require 'views/kios/signup.php';
+        break;
+    case '/menukios' :
+        require 'views/kios/menu.php';
+        break;
     case '/test' :
         require 'process/test.php';
         break;
