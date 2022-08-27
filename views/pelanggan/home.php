@@ -29,7 +29,7 @@
       <div id="slider" class="carousel carousel-dark slide" data-bs-ride="true">
         <div class="carousel-inner">
           <?php
-            require 'process/connect.php';
+            require 'process/config.php';
             $sqlkios = 'SELECT id_kios,nama_kios FROM kios';
             $resultkios = mysqli_query($conn, $sqlkios);
             $count = 0;
