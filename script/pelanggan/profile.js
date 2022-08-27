@@ -56,8 +56,8 @@ const editEmail = () => {
         msgErrorKonfirmasi.innerText = ""
 
         const editEmailData = new URLSearchParams
-        editNamaData.append("email", email)
-        editNamaData.append("konfirmasi", konfirmasi)
+        editEmailData.append("email", email)
+        editEmailData.append("konfirmasi", konfirmasi)
 
         const setEmail = async function (){
             const response = await fetch("../process/pelanggan/editemail_pelanggan.php", {
@@ -100,8 +100,8 @@ const editPassword = () =>{
         msgErrorKonfirmasi.innerText = ""
 
         const editPasswordData = new URLSearchParams
-        editNamaData.append("password", password)
-        editNamaData.append("konfirmasi", konfirmasi)
+        editPasswordData.append("password", password)
+        editPasswordData.append("konfirmasi", konfirmasi)
 
         const setPassword = async function (){
             const response = await fetch("../process/pelanggan/editpassword_pelanggan.php", {
