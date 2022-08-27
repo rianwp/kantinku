@@ -1,5 +1,5 @@
 <?php
-require '../connect.php';
+require '../config.php';
 $email = $_POST['email'];
 $password = $_POST['password'];
 $nama = $_POST['nama'];
