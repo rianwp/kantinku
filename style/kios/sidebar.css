@@ -1,0 +1,30 @@
+.sidebar{
+    height: calc(100% - 56px);
+    position: fixed;
+    width: 250px;
+    transform: translateX(-250px);
+    transition: 300ms;
+    z-index: 10;
+}
+main{
+    margin-left: 0;
+}
+@media (min-width: 992px) {
+    main {
+      margin-left: 250px;
+    }
+    .sidebar {
+      transform: none;
+      visibility: visible !important;
+    }
+}
+.open-sidebar{
+    transform: translateX(0px);
+    transition: 300ms;
+}
+.nav-list{
+  transition: 300ms;
+}
+.nav-list:hover{
+  background-color: #e2e2e2;
+}
