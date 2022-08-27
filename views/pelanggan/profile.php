@@ -14,7 +14,7 @@
     if (!isset($_SESSION['isLoggedIn_pelanggan'])){
       header('Location: /');
     } else{
-      require 'process/connect.php';
+      require 'process/config.php';
       $id_pelanggan = $_SESSION['id_pelanggan'];
       $sqlprofile = "SELECT email_pelanggan, nama_pelanggan, foto_pelanggan FROM pelanggan WHERE id_pelanggan='$id_pelanggan'";
       $resultprofile = mysqli_query($conn, $sqlprofile);
@@ -38,7 +38,11 @@
                   <input class="file" type="file" name="file-foto" id="file-foto" onchange="editFoto()" />
                 </div>
               </div>
-              <img src="data:image/jpeg;base64,<?= base64_encode($foto) ?>" class="rounded-circle foto-profile-utama">
+                <?php if($foto == ""){ ?>
+                  <img src="../assets/user.png" class="rounded-circle foto-profile-utama">
+                <?php } else{ ?>
+                  <img src="data:image/jpeg;base64,<?= base64_encode($foto) ?>" class="rounded-circle foto-profile-utama">
+                <?php } ?>
             </div>
           </div>
         </div>
