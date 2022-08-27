@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../connect.php';
+require '../config.php';
 $id = $_SESSION['id_pelanggan'];
 $password = $_POST['password'];
 $konfirmasi = $_POST['konfirmasi'];
