@@ -15,7 +15,7 @@
       header('Location: /');
     } 
     ?>
-    <div class="container my-5 mx-auto">
+    <div class="container py-5 mx-auto">
       <h1 class="text-center">Riwayat Transaksi</h1>
       <div class="overflow-auto card mt-5" style="min-height: 500px;">
         <table class="table m-0 text-center">
@@ -29,7 +29,7 @@
           </thead>
           <tbody>
             <?php
-              require 'process/connect.php';
+              require 'process/config.php';
               $count = 0;
               $id_pelanggan = $_SESSION['id_pelanggan'];
               $sqlriwayat = "SELECT total_harga, tanggal_pesanan, id_pesanan FROM pesanan WHERE id_pelanggan='$id_pelanggan'";
