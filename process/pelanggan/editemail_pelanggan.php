@@ -1,11 +1,11 @@
 <?php
 session_start();
-require '../connect.php';
+require '../config.php';
 $id = $_SESSION['id_pelanggan'];
 $email = $_POST['email'];
 $konfirmasi = $_POST['konfirmasi'];
 
-$sqlvalidateedit = "SELECT email_pelanggan FROM pelanggan WHERE id_pelanggan='$id'";
+$sqlvalidateedit = "SELECT password_pelanggan FROM pelanggan WHERE id_pelanggan='$id'";
 $validateedit = mysqli_query($conn, $sqlvalidateedit);
 $resultvalidateedit = mysqli_fetch_assoc($validateedit);
 
