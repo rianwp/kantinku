@@ -39,10 +39,10 @@
                 <div class="text-center mx-3 menu">
                   <button onclick="changeMenu('<?= $menu['id_menu'] ?>', '<?= $menu['nama_menu'] ?>', '<?= $menu['harga_menu'] ?>', '<?= $menu['id_kios'] ?>')" class="clickable-menu">
                     <label class="form-check-label" for="radio_<?= $menu['id_menu'] ?>">
-                    <?php if($menu['gambar_menu'] == ""){ ?>
+                    <?php if($menu['foto_menu'] == ""){ ?>
                       <img src="../assets/makanan.jpg" class="foto-menu rounded-circle" alt="Foto <?= $menu['nama_menu'] ?>">
                     <?php } else{ ?>
-                      <img src="data:image/jpeg;base64,<?= base64_encode($menu['gambar_menu']) ?>" class="foto-menu rounded-circle" alt="Foto <?= $menu['nama_menu'] ?>">
+                      <img src="data:image/jpeg;base64,<?= base64_encode($menu['foto_menu']) ?>" class="foto-menu rounded-circle" alt="Foto <?= $menu['nama_menu'] ?>">
                     <?php } ?>
                     </label>
                   </button>
