@@ -46,7 +46,7 @@ form.addEventListener("submit", (event) => {
             if(response.success){
                 swal("Sign Up Berhasil", response.msg, response.type)
                 setTimeout(() => {
-                    window.location.href = "/kioslogin"
+                    window.location.href = "/loginkios"
                 },1500)
             } else{
                 swal("Sign Up Gagal", response.msg, response.type)
