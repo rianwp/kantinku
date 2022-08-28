@@ -83,18 +83,18 @@ const getPesananRecap = () => {
         dataPesanRecap.total_harga = totalHarga
 
         //fetch
-        const dataPesanJSON = new URLSearchParams
+        const dataPesanJSON = new FormData
         dataPesanJSON.append("pesanan", JSON.stringify(dataPesanRecap))
 
-        const sendData = async function (){
-            const response = await fetch("../process/pelanggan/insertpesanan_pelanggan.php", {
+        const setPesanan = async function (){
+            const response = await fetch("../process/pelanggan/tambahpesanan_pelanggan.php", {
                 method : "POST",
                 body : dataPesanJSON
             })
             const result = await response.json()
             return result 
         }
-        sendData().then(response => {
+        setPesanan().then(response => {
             swal("Pesanan Berhasil Dikirim", response.msg, response.type)
         })
         
