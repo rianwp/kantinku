@@ -1,6 +1,30 @@
-.foto-menu{
-    width: 75px;
-    height: 75px;
+
+.foto-menu-edit{
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     object-position: center;
+}
+.wrapper-foto-menu{
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+.button-foto-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.432);
+    opacity: 0;
+    transition: 300ms;
+}
+.button-foto-menu:hover{
+    opacity: 1;
+}
+.file{
+    display: none;
 }
