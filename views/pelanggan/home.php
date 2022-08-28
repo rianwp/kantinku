@@ -40,12 +40,12 @@
             <div class="row mt-4 text-center">
               <h3 class="text-center mb-5"><?= $kios['nama_kios'] ?></h3>
               <?php
-                $sqlmenu = 'SELECT nama_menu,harga_menu,gambar_menu FROM menu WHERE id_kios='.$kios['id_kios'];
+                $sqlmenu = 'SELECT nama_menu,harga_menu,foto_menu FROM menu WHERE id_kios='.$kios['id_kios'];
                 $resultmenu = mysqli_query($conn, $sqlmenu);
                 foreach($resultmenu as $menu){
               ?>
               <div class="col-12 col-md-6 col-lg-4 p-3">
-                <img src="data:image/jpeg;base64,<?= base64_encode($menu['gambar_menu']) ?>" class="foto-menu rounded-circle" alt="Foto <?= $menu['nama_menu'] ?>">
+                <img src="data:image/jpeg;base64,<?= base64_encode($menu['foto_menu']) ?>" class="foto-menu rounded-circle" alt="Foto <?= $menu['nama_menu'] ?>">
                 <h4 class="mt-4"><?= $menu['nama_menu'] ?></h4>
                 <h6>Rp<?= $menu['harga_menu'] ?></h6>
               </div>
