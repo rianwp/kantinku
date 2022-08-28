@@ -17,9 +17,42 @@
         <div class="row py-3">
           <div class="col-12">
             <div class="card text-black bg-light mb-3 card-height shadow border-0 overflow-auto">
-              <div class="card-header">
-                <span><i class="me-2 bi bi-table"></i></span>
-                <span class="fw-bold">Menu</span>
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <div>
+                  <span><i class="me-2 bi bi-table"></i></span>
+                  <span class="fw-bold">Menu</span>
+                </div>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#tambah-menu">Tambah <i class="bi bi-plus"></i></button>
+                <div class="modal fade text-start" id="tambah-menu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Tambah Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="mb-3">
+                          <label for="tambahnama" class="form-label">Nama Menu</label>
+                          <input type="text" class="form-control" id="tambahnama" placeholder="Masukan Nama Menu...">
+                          <p id="nama-error" class="text-danger"></p>
+                        </div>
+                        <div class="mb-3">
+                          <label for="tambahharga" class="form-label">Harga Menu</label>
+                          <input type="number" class="form-control" id="tambahharga" placeholder="Masukan Harga Menu...">
+                          <p id="harga-error" class="text-danger"></p>
+                        </div>
+                        <div>
+                          <label for="tambahfoto" class="form-label">Foto Menu</label>
+                          <input type="file" class="form-control" id="tambahfoto">
+                          <p id="foto-error" class="text-danger"></p>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button onclick="tambahMenu()" class="btn btn-primary">Tambah</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="card-body p-0">
                 <div class="card-text fs-6 fw-bold">
@@ -48,12 +81,20 @@
                         <td class="align-middle fw-normal"><?= $menu['nama_menu'] ?></td>
                         <td class="align-middle fw-normal">Rp<?= $menu['harga_menu'] ?></td>
                         <td class="align-middle fw-normal">
-                          <img src="data:image/jpeg;base64,<?= base64_encode($menu['gambar_menu']) ?>" class="rounded foto-menu">
+                          <div class="wrapper-foto-menu rounded mx-auto">
+                            <div class="button-foto-menu rounded">
+                              <div>
+                                <label for="foto-<?= $menu['id_menu'] ?>" class="btn btn-success text-white rounded">Edit</label>
+                                <input class="file" type="file" id="foto-<?= $menu['id_menu'] ?>" onchange="editFoto('<?= $menu['id_menu'] ?>')"/>
+                              </div>
+                            </div>
+                              <img src="data:image/jpeg;base64,<?= base64_encode($menu['foto_menu']) ?>" class="rounded foto-menu-edit">
+                          </div>
                         </td>
                         <td class="align-middle fw-normal">
                           <div class="btn-group" role="group">
                             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#edit-menu-<?= $menu['id_menu'] ?>"><i class="bi bi-pencil-fill"></i></button>
-                            <div class="modal fade" id="edit-menu-<?= $menu['id_menu'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal fade text-start" id="edit-menu-<?= $menu['id_menu'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
                                   <div class="modal-header">
@@ -61,29 +102,22 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                   </div>
                                   <div class="modal-body">
-                                    <div class="mb-1">
+                                    <div class="mb-3">
                                       <label for="nama-<?= $menu['id_menu'] ?>" class="form-label">Nama Menu</label>
-                                      <input type="text" class="form-control" id="nama-<?= $menu['id_menu'] ?>" placeholder="Masukan Nama...">
-                                      <p id="nama-error" class="text-danger m-0"></p>
+                                      <input type="text" class="form-control" id="nama-<?= $menu['id_menu'] ?>" placeholder="Masukan Nama Menu...">
                                     </div>
-                                    <div class="mb-1">
+                                    <div>
                                       <label for="harga-<?= $menu['id_menu'] ?>" class="form-label">Harga Menu</label>
-                                      <input type="number" class="form-control" id="harga-<?= $menu['id_menu'] ?>" placeholder="Masukan Harga...">
-                                      <p id="harga-error" class="text-danger m-0"></p>
-                                    </div>
-                                    <div class="mb-1">
-                                      <label for="harga-<?= $menu['id_menu'] ?>" class="form-label">Harga Menu</label>
-                                      <input type="number" class="form-control" id="harga-<?= $menu['id_menu'] ?>" placeholder="Masukan Harga...">
-                                      <p id="harga-error" class="text-danger m-0"></p>
+                                      <input type="number" class="form-control" id="harga-<?= $menu['id_menu'] ?>" placeholder="Masukan Harga Menu...">
                                     </div>
                                   </div>
                                   <div class="modal-footer">
-                                    <button onclick="editMenu()" class="btn btn-primary">Edit</button>
+                                    <button onclick="editMenu('<?= $menu['id_menu'] ?>')" class="btn btn-primary">Edit</button>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                            <button type="button" onclick="deletePesanan()" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+                            <button type="button" onclick="hapusMenu('<?= $menu['id_menu'] ?>')" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
                           </div>
                         </td>
                       </tr>
@@ -97,5 +131,6 @@
         </div>
       </div>
     </main>
+    <script src="script/kios/menu.js"></script>
 </body>
 </html>
