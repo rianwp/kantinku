@@ -23,7 +23,7 @@
         <a class="nav-link" href="/pesanankios"><i class="bi bi-clipboard-fill me-2"></i>Pesanan</a>
       </li>
       <li class="nav-list px-3">
-        <a class="nav-link" href="/menukios"><i class="bi bi-table me-2"></i>Edit Menu</a>
+        <a class="nav-link" href="/menukios"><i class="bi bi-table me-2"></i>Menu</a>
       </li>
       <li class="nav-list px-3">
         <a class="nav-link" href="/profilekios"><i class="bi bi-person-fill me-2"></i>Profile</a>
