@@ -40,9 +40,6 @@ switch ($request) {
     case '/menukios' :
         require 'views/kios/menu.php';
         break;
-    case '/test' :
-        require 'process/test.php';
-        break;
     default:
         http_response_code(404);
         break;
