@@ -11,7 +11,7 @@ const editNama = () => {
         msgErrorNama.innerText = ""
         msgErrorKonfirmasi.innerText = ""
 
-        const editNamaData = new URLSearchParams
+        const editNamaData = new FormData
         editNamaData.append("nama", nama)
         editNamaData.append("konfirmasi", konfirmasi)
 
@@ -55,7 +55,7 @@ const editEmail = () => {
         msgErrorEmail.innerText = ""
         msgErrorKonfirmasi.innerText = ""
 
-        const editEmailData = new URLSearchParams
+        const editEmailData = new FormData
         editEmailData.append("email", email)
         editEmailData.append("konfirmasi", konfirmasi)
 
@@ -99,7 +99,7 @@ const editPassword = () =>{
         msgErrorPassword.innerText = ""
         msgErrorKonfirmasi.innerText = ""
 
-        const editPasswordData = new URLSearchParams
+        const editPasswordData = new FormData
         editPasswordData.append("password", password)
         editPasswordData.append("konfirmasi", konfirmasi)
 
@@ -136,10 +136,10 @@ const editPassword = () =>{
 }
 
 const editFoto = () => {
-    const foto = document.getElementsByName('file-foto')[0]
+    const foto = document.getElementById('file-foto').files
 
     const editFotoData = new FormData
-    editFotoData.append("foto", foto.files[0])
+    editFotoData.append("foto", foto[0])
 
     const setFoto = async function (){
         const response = await fetch("../process/pelanggan/editfoto_pelanggan.php", {
