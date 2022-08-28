@@ -12,7 +12,7 @@ form.addEventListener("submit", (event) => {
         msgErrorEmail.innerText = ""
         msgErrorPassword.innerText = ""
 
-        const loginData = new URLSearchParams
+        const loginData = new FormData
         loginData.append("email", checkEmail)
         loginData.append("password", checkPassword)
 
