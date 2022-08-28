@@ -18,7 +18,7 @@ form.addEventListener("submit", (event) => {
         msgErrorPasswordKonfirmasi.innerText = ""
         msgErrorNama.innerText = ""
 
-        const signupData = new URLSearchParams
+        const signupData = new FormData
         signupData.append("email", checkEmail)
         signupData.append("password", checkPassword)
         signupData.append("nama", checkNama)
