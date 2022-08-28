@@ -35,7 +35,7 @@
               <div class="button-foto-profile mx-auto rounded-circle">
                 <div>
                   <label for="file-foto" class="btn btn-success text-white rounded">Edit</label>
-                  <input class="file" type="file" name="file-foto" id="file-foto" onchange="editFoto()" />
+                  <input class="file" type="file" id="file-foto" onchange="editFoto()" />
                 </div>
               </div>
                 <?php if($foto == ""){ ?>
@@ -97,7 +97,7 @@
               <input type="text" class="form-control" id="nama" placeholder="Masukan Nama...">
               <p id="nama-error" class="text-danger m-0"></p>
             </div>
-            <div class="mb-1">
+            <div>
               <label for="konfirmasi-nama" class="form-label">Password</label>
               <input type="password" class="form-control" id="konfirmasi-nama" placeholder="Masukan Password Untuk Konfirmasi...">
               <p id="konfirmasi-error" class="text-danger m-0"></p>
@@ -123,7 +123,7 @@
               <input type="email" class="form-control" id="email" placeholder="Masukan Email...">
               <p id="email-error" class="text-danger m-0"></p>
             </div>
-            <div class="mb-1">
+            <div>
               <label for="konfirmasi-email" class="form-label">Password</label>
               <input type="password" class="form-control" id="konfirmasi-email" placeholder="Masukan Password Untuk Konfirmasi...">
               <p id="konfirmasi-error" class="text-danger m-0"></p>
@@ -149,7 +149,7 @@
               <input type="password" class="form-control" id="password" placeholder="Masukan Password...">
               <p id="password-error" class="text-danger m-0"></p>
             </div>
-            <div class="mb-1">
+            <div>
               <label for="konfirmasi-password" class="form-label">Password</label>
               <input type="password" class="form-control" id="konfirmasi-password" placeholder="Masukan Password Untuk Konfirmasi...">
               <p id="konfirmasi-error" class="text-danger m-0"></p>
