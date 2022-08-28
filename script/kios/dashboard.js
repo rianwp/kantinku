@@ -28,4 +28,7 @@ const showPesanan = () => {
         }
     })
 }
+window.onload = (() => {
+    showPesanan()
+})
 setInterval(showPesanan, 1000)
